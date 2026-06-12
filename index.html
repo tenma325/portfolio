@@ -12,13 +12,12 @@
         --color-champagne: #f3e8d2;
         --color-antique-gold: #a2895e;
         --border-sepia: rgba(243, 232, 210, 0.12);
+        --border-hover: rgba(243, 232, 210, 0.32);
         --font-mono: "JetBrains Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
         --font-serif: "Cormorant Garamond", "Palatino Linotype", "Book Antiqua", Palatino, serif;
       }
 
-      * {
-        box-sizing: border-box;
-      }
+      * { box-sizing: border-box; }
 
       html, body {
         margin: 0;
@@ -60,7 +59,6 @@
       }
 
       .masthead-subtitle {
-        font-family: var(--font-mono);
         font-size: 0.78rem;
         color: var(--color-antique-gold);
         letter-spacing: 0.06em;
@@ -73,7 +71,6 @@
         color: var(--color-champagne);
         padding: 12px 18px;
         border-radius: 4px;
-        font-family: var(--font-mono);
         font-size: 0.75rem;
         text-align: left;
         cursor: pointer;
@@ -86,7 +83,7 @@
 
       .portfolio-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 24px;
       }
 
@@ -100,19 +97,24 @@
         padding: 22px;
         text-decoration: none;
         color: inherit;
+        transition: border-color 0.2s ease;
       }
 
       .portfolio-card:hover {
-        border-color: rgba(243, 232, 210, 0.32);
+        border-color: var(--border-hover);
       }
 
       .portfolio-thumb {
         width: 100%;
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
+        aspect-ratio: 16 / 10;
         border-radius: 6px;
-        border: 1px solid var(--border-sepia);
+        overflow: hidden;
         background: #050504;
+        border: 1px solid var(--border-sepia);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-antique-gold);
       }
 
       .portfolio-title {
@@ -135,6 +137,13 @@
         font-size: 0.72rem;
         color: var(--color-antique-gold);
       }
+
+      .portfolio-url {
+        font-size: 0.7rem;
+        color: #6b9b8e;
+        letter-spacing: 0.02em;
+        word-break: break-all;
+      }
     </style>
   </head>
   <body>
@@ -152,10 +161,27 @@
       </nav>
 
       <section class="portfolio-grid">
+
         <a class="portfolio-card" href="https://github.com/tenma325/casino-affiliate-platform">
-          <img class="portfolio-thumb" src="https://github.com/tenma325.png" alt="Cosmic Rewards thumbnail" />
+          <div class="portfolio-thumb">
+            <svg viewBox="0 0 400 250" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" style="display:block">
+              <defs>
+                <linearGradient id="th-cosmic" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#1a0a2e"/>
+                  <stop offset="50%" stop-color="#2d1b69"/>
+                  <stop offset="100%" stop-color="#0c0b0a"/>
+                </linearGradient>
+              </defs>
+              <rect width="400" height="250" fill="url(#th-cosmic)"/>
+              <circle cx="200" cy="100" r="35" fill="none" stroke="rgba(162,137,94,0.4)" stroke-width="1.5"/>
+              <circle cx="200" cy="100" r="50" fill="none" stroke="rgba(162,137,94,0.2)" stroke-width="0.5"/>
+              <text x="200" y="175" text-anchor="middle" fill="rgba(243,232,210,0.5)" font-size="11" font-family="monospace">COSMIC / REWARDS</text>
+              <text x="200" y="192" text-anchor="middle" fill="rgba(243,232,210,0.3)" font-size="8" font-family="monospace">LEADERBOARD ・ REWARDS</text>
+            </svg>
+          </div>
           <h2 class="portfolio-title">Cosmic Rewards</h2>
           <p class="portfolio-desc">Casino affiliate portal with real-time leaderboard, rewards, and admin console.</p>
+          <div class="portfolio-url">https://github.com/tenma325/casino-affiliate-platform</div>
           <div class="meta-row">
             <span>tenma325/casino-affiliate-platform</span>
             <span>Repository</span>
@@ -163,9 +189,28 @@
         </a>
 
         <a class="portfolio-card" href="https://github.com/tenma325/portfolio">
-          <img class="portfolio-thumb" src="https://github.com/tenma325.png" alt="Sports Prediction thumbnail" />
+          <div class="portfolio-thumb">
+            <svg viewBox="0 0 400 250" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" style="display:block">
+              <defs>
+                <linearGradient id="th-sports" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#0a1628"/>
+                  <stop offset="50%" stop-color="#0d2f3f"/>
+                  <stop offset="100%" stop-color="#0c0b0a"/>
+                </linearGradient>
+              </defs>
+              <rect width="400" height="250" fill="url(#th-sports)"/>
+              <line x1="80" y1="140" x2="150" y2="100" stroke="rgba(107,155,142,0.4)" stroke-width="1.5"/>
+              <line x1="150" y1="100" x2="220" y2="120" stroke="rgba(107,155,142,0.4)" stroke-width="1"/>
+              <line x1="220" y1="120" x2="320" y2="70" stroke="rgba(107,155,142,0.6)" stroke-width="2"/>
+              <circle cx="150" cy="100" r="3" fill="rgba(107,155,142,0.6)"/>
+              <circle cx="320" cy="70" r="3" fill="rgba(107,155,142,0.8)"/>
+              <text x="200" y="175" text-anchor="middle" fill="rgba(243,232,210,0.5)" font-size="11" font-family="monospace">SPORTS / PREDICTION</text>
+              <text x="200" y="192" text-anchor="middle" fill="rgba(243,232,210,0.3)" font-size="8" font-family="monospace">NPB ・ MLB ・ ELO</text>
+            </svg>
+          </div>
           <h2 class="portfolio-title">Sports Prediction</h2>
           <p class="portfolio-desc">Elo-based prediction tracker for NPB/MLB with review pipeline.</p>
+          <div class="portfolio-url">https://github.com/tenma325/portfolio</div>
           <div class="meta-row">
             <span>v2.4 tracked</span>
             <span>Private</span>
@@ -173,14 +218,37 @@
         </a>
 
         <a class="portfolio-card" href="https://github.com/tenma325/portfolio">
-          <img class="portfolio-thumb" src="https://github.com/tenma325.png" alt="Infrastructure thumbnail" />
+          <div class="portfolio-thumb">
+            <svg viewBox="0 0 400 250" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" style="display:block">
+              <defs>
+                <linearGradient id="th-infra" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#0c0b0a"/>
+                  <stop offset="50%" stop-color="#1a1a2e"/>
+                  <stop offset="100%" stop-color="#0a1628"/>
+                </linearGradient>
+              </defs>
+              <rect width="400" height="250" fill="url(#th-infra)"/>
+              <rect x="100" y="75" width="60" height="40" rx="3" fill="none" stroke="rgba(162,137,94,0.4)" stroke-width="1"/>
+              <rect x="180" y="75" width="60" height="40" rx="3" fill="none" stroke="rgba(162,137,94,0.4)" stroke-width="1"/>
+              <rect x="260" y="75" width="60" height="40" rx="3" fill="none" stroke="rgba(162,137,94,0.4)" stroke-width="1"/>
+              <line x1="130" y1="115" x2="130" y2="135" stroke="rgba(162,137,94,0.3)" stroke-width="0.8"/>
+              <line x1="210" y1="115" x2="210" y2="135" stroke="rgba(162,137,94,0.3)" stroke-width="0.8"/>
+              <line x1="290" y1="115" x2="290" y2="135" stroke="rgba(162,137,94,0.3)" stroke-width="0.8"/>
+              <line x1="130" y1="135" x2="210" y2="135" stroke="rgba(162,137,94,0.2)" stroke-width="0.8"/>
+              <line x1="210" y1="135" x2="290" y2="135" stroke="rgba(162,137,94,0.2)" stroke-width="0.8"/>
+              <text x="200" y="175" text-anchor="middle" fill="rgba(243,232,210,0.5)" font-size="11" font-family="monospace">SELF-HOSTED / AI INFRA</text>
+              <text x="200" y="192" text-anchor="middle" fill="rgba(243,232,210,0.3)" font-size="8" font-family="monospace">LLM ・ GPU ・ PATTERNS</text>
+            </svg>
+          </div>
           <h2 class="portfolio-title">Self-hosted AI Infra</h2>
           <p class="portfolio-desc">Local LLM providers and GPU management patterns.</p>
+          <div class="portfolio-url">https://github.com/tenma325/portfolio</div>
           <div class="meta-row">
             <span>Work in progress</span>
             <span>Docs</span>
           </div>
         </a>
+
       </section>
     </div>
   </body>
