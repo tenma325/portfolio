@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | tenma325</title>
+    <style>
+      :root {
+        --bg-obsidian: #0c0b0a;
+        --bg-ink-dark: #030303;
+        --bg-panel: #0b0a09;
+        --color-champagne: #f3e8d2;
+        --color-antique-gold: #a2895e;
+        --border-sepia: rgba(243, 232, 210, 0.12);
+        --font-mono: "JetBrains Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+        --font-serif: "Cormorant Garamond", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg-obsidian);
+        color: var(--color-champagne);
+        font-family: var(--font-mono);
+        min-height: 100vh;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        padding: 64px 24px 96px;
+      }
+
+      .assembly-layout {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+      }
+
+      .brand-section {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding-bottom: 28px;
+        border-bottom: 1px solid var(--border-sepia);
+      }
+
+      .masthead-title {
+        font-family: var(--font-serif);
+        font-size: clamp(2.4rem, 5vw, 3.6rem);
+        line-height: 1.1;
+        margin: 0;
+        letter-spacing: -0.01em;
+      }
+
+      .masthead-subtitle {
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        color: var(--color-antique-gold);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .nav-link {
+        background: transparent;
+        border: 1px solid var(--border-sepia);
+        color: var(--color-champagne);
+        padding: 12px 18px;
+        border-radius: 4px;
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .nav-link.active {
+        border-color: var(--color-antique-gold);
+        color: var(--color-antique-gold);
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+      }
+
+      .portfolio-card {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        background: var(--bg-panel);
+        border: 1px solid var(--border-sepia);
+        border-radius: 8px;
+        padding: 22px;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .portfolio-card:hover {
+        border-color: rgba(243, 232, 210, 0.32);
+      }
+
+      .portfolio-thumb {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-radius: 6px;
+        border: 1px solid var(--border-sepia);
+        background: #050504;
+      }
+
+      .portfolio-title {
+        font-family: var(--font-serif);
+        font-size: 1.3rem;
+        margin: 0;
+      }
+
+      .portfolio-desc {
+        margin: 0;
+        font-size: 0.82rem;
+        color: var(--color-antique-gold);
+        line-height: 1.6;
+      }
+
+      .meta-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        font-size: 0.72rem;
+        color: var(--color-antique-gold);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="assembly-layout">
+      <div class="brand-section">
+        <h1 class="masthead-title">Portfolio</h1>
+        <span class="masthead-subtitle">tenma325 // Selected Works</span>
+      </div>
+
+      <nav class="nav-row" style="display:flex;gap:12px;flex-wrap:wrap">
+        <button class="nav-link active">All</button>
+        <button class="nav-link">Frontend</button>
+        <button class="nav-link">Automation</button>
+        <button class="nav-link">Infrastructure</button>
+      </nav>
+
+      <section class="portfolio-grid">
+        <a class="portfolio-card" href="https://github.com/tenma325/casino-affiliate-platform">
+          <img class="portfolio-thumb" src="https://github.com/tenma325.png" alt="Cosmic Rewards thumbnail" />
+          <h2 class="portfolio-title">Cosmic Rewards</h2>
+          <p class="portfolio-desc">React / Express / SQLite casino affiliate portal with real-time leaderboard and admin console.</p>
+          <div class="meta-row">
+            <span>tenma325/casino-affiliate-platform</span>
+            <span>Repository</span>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="#">
+          <img class="portfolio-thumb" src="https://github.com/tenma325.png" alt="Sports Prediction thumbnail" />
+          <h2 class="portfolio-title">Sports Prediction</h2>
+          <p class="portfolio-desc">Elo-based prediction system for NPB/MLB with tracking and review pipeline.</p>
+          <div class="meta-row">
+            <span>v2.4 tracked</span>
+            <span>Private</span>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="#">
+          <img class="portfolio-thumb" src="https://github.com/tenma325.png" alt="Infrastructure thumbnail" />
+          <h2 class="portfolio-title">Self-hosted AI Infra</h2>
+          <p class="portfolio-desc">Local LLM providers, GPU management, and Olares-style AI infrastructure patterns.</p>
+          <div class="meta-row">
+            <span>Work in progress</span>
+            <span>Docs</span>
+          </div>
+        </a>
+      </section>
+    </div>
+  </body>
+</html>
